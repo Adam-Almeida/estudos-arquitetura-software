@@ -1,5 +1,7 @@
+import { FirstName } from './fisrst-name'
+
 export interface CustomerProps {
-  firstName: string
+  firstName: FirstName
   lastName: string
   email: string
   emailActived: boolean
@@ -21,20 +23,16 @@ export class Customer {
     this.props = props
   }
 
-  public set firstName(value: string) {
-    if (value.length < 3) {
-      throw new Error()
-    }
-
+  public set firstName(value: FirstName) {
     this.props.firstName = value
   }
 
-  public get fistName(): string {
+  public get fistName(): FirstName {
     return this.props.firstName
   }
 
   public set lastName(value: string) {
-    this.props.firstName = value
+    this.props.lastName = value
   }
 
   public get lastName(): string {
