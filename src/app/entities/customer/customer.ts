@@ -1,5 +1,5 @@
 import { Replace } from '@/helpers/Replace'
-import { FirstName } from './fisrst-name'
+import { FirstName } from './first-name'
 import { LastName } from './last-name'
 
 export interface CustomerProps {

@@ -1,5 +1,5 @@
 import { Customer, Role } from './customer'
-import { FirstName } from './fisrst-name'
+import { FirstName } from './first-name'
 import { LastName } from './last-name'
 
 describe('Customers', () => {

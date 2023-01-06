@@ -1,4 +1,4 @@
-import { FirstName } from './fisrst-name'
+import { FirstName } from './first-name'
 
 describe('Customers first name', () => {
   it('should be able to create a customer first name', () => {
