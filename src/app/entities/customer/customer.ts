@@ -1,9 +1,10 @@
 import { Replace } from '@/helpers/Replace'
 import { FirstName } from './fisrst-name'
+import { LastName } from './last-name'
 
 export interface CustomerProps {
   firstName: FirstName
-  lastName: string
+  lastName: LastName
   email: string
   emailActived: boolean
   password: string
@@ -35,11 +36,11 @@ export class Customer {
     return this.props.firstName
   }
 
-  public set lastName(value: string) {
+  public set lastName(value: LastName) {
     this.props.lastName = value
   }
 
-  public get lastName(): string {
+  public get lastName(): LastName {
     return this.props.lastName
   }
 
