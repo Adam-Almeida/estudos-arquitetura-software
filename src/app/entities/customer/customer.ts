@@ -1,3 +1,4 @@
+import { Replace } from '@/helpers/Replace'
 import { FirstName } from './fisrst-name'
 
 export interface CustomerProps {
@@ -11,16 +12,19 @@ export interface CustomerProps {
   updatedAt?: Date | null
 }
 
-type Role = {
-  COLABORATOR: string
-  ADMIN: string
+export enum Role {
+  COLABORATOR,
+  ADMIN,
 }
 
 export class Customer {
   private props: CustomerProps
 
-  constructor(props: CustomerProps) {
-    this.props = props
+  constructor(props: Replace<CustomerProps, { createdAt?: Date }>) {
+    this.props = {
+      ...props,
+      createdAt: props.createdAt ?? new Date(),
+    }
   }
 
   public set firstName(value: FirstName) {
