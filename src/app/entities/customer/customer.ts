@@ -8,12 +8,16 @@ export class Customer {
     private props: CustomerProps
 
     constructor(
-        props: Replace<CustomerProps, { emailActived: boolean; createdAt?: Date }>
+        props: Replace<
+            CustomerProps,
+            { emailActived?: boolean; userType?: Role; createdAt?: Date }
+        >
     ) {
         this.props = {
             ...props,
             createdAt: props.createdAt ?? new Date(),
-            emailActived: false
+            emailActived: props.emailActived ?? false,
+            userType: props.userType ?? Role.COLABORATOR,
         }
     }
 
@@ -41,8 +45,11 @@ export class Customer {
         return this.props.email
     }
 
+    public set emailActived(value: boolean | undefined) {
+        this.props.emailActived
+    }
 
-    public get emailActived(): boolean | null | undefined {
+    public get emailActived(): boolean | undefined {
         return this.props.emailActived
     }
 
@@ -54,11 +61,11 @@ export class Customer {
         return this.props.password
     }
 
-    public set userType(value: Role) {
+    public set userType(value: Role | undefined) {
         this.props.userType = value
     }
 
-    public get userType(): Role {
+    public get userType(): Role | undefined {
         return this.props.userType
     }
 

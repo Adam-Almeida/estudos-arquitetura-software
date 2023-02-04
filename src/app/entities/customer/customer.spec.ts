@@ -1,4 +1,3 @@
-import { Role } from './customer-interface'
 import { Customer } from './customer'
 import { FirstName } from './first-name'
 import { LastName } from './last-name'
@@ -11,9 +10,7 @@ describe('Customers', () => {
             firstName: new FirstName('Adam'),
             lastName: new LastName('Almeida'),
             email: new Email('test@email.com'),
-            emailActived: false,
             password: '12345678',
-            userType: Role.COLABORATOR,
         })
         expect(customer).toBeTruthy()
     })

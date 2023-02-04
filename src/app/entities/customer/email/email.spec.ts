@@ -1,6 +1,6 @@
 import { Email } from '.'
 
-const invalidEMails = [
+const invalidEmails = [
     '@test.com',
     '#@test.',
     'email',
@@ -25,7 +25,7 @@ describe('Customers email', () => {
 
     // não deve ser possível criar um email de cliente inválido
     it('should not be able to create a customer invalid email', () => {
-        invalidEMails.map((email) => {
+        invalidEmails.map((email) => {
             expect(() => new Email(email)).toThrow()
         })
     })
