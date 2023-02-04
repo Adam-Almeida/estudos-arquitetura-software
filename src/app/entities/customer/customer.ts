@@ -7,10 +7,13 @@ import { LastName } from './last-name'
 export class Customer {
     private props: CustomerProps
 
-    constructor(props: Replace<CustomerProps, { createdAt?: Date }>) {
+    constructor(
+        props: Replace<CustomerProps, { emailActived: boolean; createdAt?: Date }>
+    ) {
         this.props = {
             ...props,
             createdAt: props.createdAt ?? new Date(),
+            emailActived: false
         }
     }
 
@@ -38,11 +41,8 @@ export class Customer {
         return this.props.email
     }
 
-    public set emailActived(value: boolean) {
-        this.props.emailActived = value
-    }
 
-    public get emailActived(): boolean {
+    public get emailActived(): boolean | null | undefined {
         return this.props.emailActived
     }
 

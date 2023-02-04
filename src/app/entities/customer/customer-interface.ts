@@ -6,7 +6,7 @@ export interface CustomerProps {
     firstName: FirstName
     lastName: LastName
     email: Email
-    emailActived: boolean
+    emailActived?: boolean | null
     password: string
     userType: Role
     createdAt: Date
