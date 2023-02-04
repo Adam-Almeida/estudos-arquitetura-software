@@ -17,7 +17,7 @@ export class Email {
         if (!isEmailValid) {
             throw new Error('Email is not valid')
         }
-        
+
         this.email = email
     }
 }
