@@ -13,5 +13,17 @@ describe('Customers', () => {
             password: '12345678',
         })
         expect(customer).toBeTruthy()
+    }),
+
+    //deve ser possível criar um novo cliente com o status ativo de email
+    it('should be able to create a new customer with an active email status', () => {
+        const customer = new Customer({
+            firstName: new FirstName('Adam'),
+            lastName: new LastName('Almeida'),
+            emailActived: true,
+            email: new Email('test@email.com'),
+            password: '12345678',
+        })
+        expect(customer).toBeTruthy()
     })
 })
