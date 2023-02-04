@@ -1,5 +1,6 @@
 import { Replace } from '@/helpers/Replace'
 import { CustomerProps, Role } from './customer-interface'
+import { Email } from './email'
 import { FirstName } from './first-name'
 import { LastName } from './last-name'
 
@@ -29,11 +30,11 @@ export class Customer {
         return this.props.lastName
     }
 
-    public set email(value: string) {
+    public set email(value: Email) {
         this.props.email = value
     }
 
-    public get email(): string {
+    public get email(): Email {
         return this.props.email
     }
 

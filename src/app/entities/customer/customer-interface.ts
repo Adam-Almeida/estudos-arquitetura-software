@@ -1,10 +1,11 @@
+import { Email } from './email'
 import { FirstName } from './first-name'
 import { LastName } from './last-name'
 
 export interface CustomerProps {
     firstName: FirstName
     lastName: LastName
-    email: string
+    email: Email
     emailActived: boolean
     password: string
     userType: Role

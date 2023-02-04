@@ -2,6 +2,7 @@ import { Role } from './customer-interface'
 import { Customer } from './customer'
 import { FirstName } from './first-name'
 import { LastName } from './last-name'
+import { Email } from './email'
 
 describe('Customers', () => {
     //deve ser possível criar um novo cliente
@@ -9,7 +10,7 @@ describe('Customers', () => {
         const customer = new Customer({
             firstName: new FirstName('Adam'),
             lastName: new LastName('Almeida'),
-            email: 'test@email.com',
+            email: new Email('test@email.com'),
             emailActived: false,
             password: '12345678',
             userType: Role.COLABORATOR,
