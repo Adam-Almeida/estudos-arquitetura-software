@@ -15,7 +15,7 @@ model Customer {
   first_name    String
   last_name     String?
   email         String   @unique
-  email_actived Boolean  @default(true)
+  email_actived Boolean  @default(false)
   password      String
   user_type     Role     @default(COLABORATOR)
   created_at    DateTime @default(now())
