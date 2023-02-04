@@ -17,13 +17,13 @@ const invalidEMails = [
 ]
 
 describe('Customers email', () => {
-    // deve ser possível de criar um email de cliente
+    // deve ser possível criar um email de cliente
     it('should be able to create a customer email', () => {
         const email = new Email('emailteste@teste.com')
         expect(email).toBeTruthy()
     })
 
-    // não deve ser possível de criar um email de cliente inválido
+    // não deve ser possível criar um email de cliente inválido
     it('should not be able to create a customer invalid email', () => {
         invalidEMails.map((email) => {
             expect(() => new Email(email)).toThrow()
