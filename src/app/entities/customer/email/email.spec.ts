@@ -29,4 +29,10 @@ describe('Customers email', () => {
             expect(() => new Email(email)).toThrow()
         })
     })
+
+    // não deve ser possível criar um email de cliente vazio
+    it('should not be able to create a customer empty email', () => {
+        const email = ''
+        expect(() => new Email(email)).toThrow()
+    })
 })

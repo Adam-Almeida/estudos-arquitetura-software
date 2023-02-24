@@ -1,4 +1,4 @@
-import { CreateCustomer, Role } from './create-customer'
+import { CreateCustomer } from './create-customer'
 
 describe('Create Customer Use Case', () => {
     it('should be able new customer', async () => {
@@ -8,8 +8,7 @@ describe('Create Customer Use Case', () => {
             firstName: 'Bruce',
             lastName: 'Wayne',
             email: 'bruce@waynecorporation.com',
-            password: 'password',
-            userType: Role.COLABORATOR,
+            password: 'password'
         })
 
         expect(customer).toBeTruthy()

@@ -1,5 +1,5 @@
 import { Replace } from '@/helpers/Replace'
-import { CustomerProps, Role } from './customer-interface'
+import { CustomerProps, UserTypeProps } from './customer-interface'
 import { Email } from './email'
 import { FirstName } from './first-name'
 import { LastName } from './last-name'
@@ -10,14 +10,14 @@ export class Customer {
     constructor(
         props: Replace<
             CustomerProps,
-            { emailActived?: boolean; userType?: Role; createdAt?: Date }
+            { userType?: UserTypeProps, emailActived?: boolean; createdAt?: Date }
         >
     ) {
         this.props = {
             ...props,
             createdAt: props.createdAt ?? new Date(),
-            emailActived: props.emailActived ?? false,
-            userType: props.userType ?? Role.COLABORATOR,
+            emailActived: false,
+            userType: UserTypeProps.COLLABORATOR
         }
     }
 
@@ -59,14 +59,6 @@ export class Customer {
 
     public get password(): string {
         return this.props.password
-    }
-
-    public set userType(value: Role | undefined) {
-        this.props.userType = value
-    }
-
-    public get userType(): Role | undefined {
-        return this.props.userType
     }
 
     public set updatedAt(value: Date | null | undefined) {

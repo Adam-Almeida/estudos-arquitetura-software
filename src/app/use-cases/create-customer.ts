@@ -8,30 +8,24 @@ interface CreateCustomerRequest {
     lastName: string
     email: string
     password: string
-    userType: Role
 }
 
-export enum Role {
-    COLABORATOR,
-    ADMIN,
-}
-
-interface CreateCustomerResponse{
+interface CreateCustomerResponse {
     customer: Customer
 }
 
 export class CreateCustomer {
     async execute(request: CreateCustomerRequest): Promise<CreateCustomerResponse> {
-        const { firstName, lastName, email, password, userType } = request
+        const { firstName, lastName, email, password} = request
 
         const customer = new Customer({
             firstName: new FirstName(firstName),
             lastName: new LastName(lastName),
             email: new Email(email),
             password: password,
-            emailActived: false,
-            userType: userType,
+            emailActived: false
         })
+
 
         return {
             customer,
