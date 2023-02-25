@@ -1,23 +1,11 @@
-import { CreateCustomer } from '@/app/use-cases/create-customer'
+import { CreateCustomerController } from '@/app/controllers/create-customer-controller'
 import { Router, Request, Response } from 'express'
 import { prisma } from '../prisma-service'
 
 export const customer = Router()
 
-customer.post('/customer', async (request: Request, response: Response) => {
-    const { firstName, lastName, email, password, userType } = request.body
-
-    const createCustomerUseCase = new CreateCustomer()
-
-    const customer = await createCustomerUseCase.execute({
-        firstName,
-        lastName,
-        email,
-        password,
-        userType,
-    })
-
-    response.json(customer)
+customer.post('/customer', (request: Request) => {
+    CreateCustomerController(request.body)
 })
 
 customer.get('/customer', (request: Request, response: Response) => {

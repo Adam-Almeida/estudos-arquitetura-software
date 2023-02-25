@@ -3,6 +3,7 @@ import { CustomerProps, UserTypeProps } from './customer-interface'
 import { Email } from './email'
 import { FirstName } from './first-name'
 import { LastName } from './last-name'
+import { Password } from './password'
 
 export class Customer {
     private props: CustomerProps
@@ -53,11 +54,11 @@ export class Customer {
         return this.props.emailActived
     }
 
-    public set password(value: string) {
+    public set password(value: Password) {
         this.props.password = value
     }
 
-    public get password(): string {
+    public get password(): Password {
         return this.props.password
     }
 
